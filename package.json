@@ -1,44 +1,40 @@
 {
-	"name": "cryptoproject-sem6",
-	"version": "1.0.0",
-	"description": "Decentralized Encrypted File Storage.",
-	"main": "truffle-config.js",
-	"directories": {
-		"test": "test"
-	},
-	"scripts": {
-		"generate": "rimraf @types && typechain --target=truffle-v4 --outDir @types 'build/contracts/*.json'",
-		"postinstall": "truffle compile && yarn generate",
-		"typecheck": "tsc --noEmit",
-		"test:ethereum": "ganache-cli -m 'salute special cloud nice grit polar action glide equip point hammer cotton crane divert hollow'"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/anudit/cryptoproject-sem6.git"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"bugs": {
-		"url": "https://github.com/anudit/cryptoproject-sem6/issues"
-	},
-	"homepage": "https://github.com/anudit/cryptoproject-sem6#readme",
-	"dependencies": {
-		"@openzeppelin/contracts": "^4.0.0",
-		"@typechain/truffle-v4": "^3.0.0",
-		"typechain": "^4.0.3"
-	},
-	"devDependencies": {
-		"@types/chai": "^4.2.15",
-		"@types/mocha": "^8.2.2",
-		"bignumber.js": "^9.0.1",
-		"husky": "^4.1.0",
-		"prettier": "^2.2.1",
-		"pretty-quick": "^3.1.0"
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "pretty-quick --staged"
-		}
-	}
+  "name": "tachyon",
+  "version": "1.0.0",
+  "description": "tachyon",
+  "scripts": {
+    "compile": "npx hardhat compile",
+    "deploy:local": "npx hardhat run scripts/deploy.js --network hardhat",
+    "deploy:matic": "npx hardhat run scripts/deploy.js --network matic",
+    "test": "npx hardhat test",
+    "flatten": "npx hardhat flatten ./contracts/Tachyon.sol > flat.sol",
+    "check": "npm run test && npm run deploy:local"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anudit/tachyon.git"
+  },
+  "author": "Anudit Nagar",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/anudit/tachyon/issues"
+  },
+  "homepage": "https://github.com/anudit/tachyon#readme",
+  "dependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.1",
+    "@nomiclabs/hardhat-etherscan": "^2.1.1",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "@openzeppelin/contracts": "^4.1.0",
+    "chai": "^4.2.0",
+    "dotenv": "^9.0.2",
+    "ethereum-waffle": "^3.2.2",
+    "ethers": "^5.0.31",
+    "hardhat": "^2.0.11",
+    "hardhat-abi-exporter": "^2.0.8",
+    "hardhat-contract-sizer": "^2.0.2",
+    "hardhat-gas-reporter": "^1.0.4"
+  },
+  "devDependencies": {
+    "@openzeppelin/test-helpers": "^0.5.10"
+  }
 }

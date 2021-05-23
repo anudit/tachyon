@@ -40,6 +40,7 @@ contract Tachyon is TachyonMeta {
         public
     {
         files[msg.sender].push(_fileHash);
+        authorized[msg.sender][msg.sender] = true;
         emit newFile(msg.sender, _fileHash, _fileHash);
     }
 
@@ -66,6 +67,7 @@ contract Tachyon is TachyonMeta {
         address recoveredAddress = ecrecover(digest, v, r, s);
 
         files[recoveredAddress].push(_fileHash);
+        authorized[msg.sender][msg.sender] = true;
         emit newFile(recoveredAddress, _fileHash, _fileHash);
     }
 

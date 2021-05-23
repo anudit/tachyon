@@ -5,7 +5,7 @@
 ```json
 {
   "80001": {
-    "Tachyon": "0x55dD56f71264AF9E0bedC73FC677A9b10DA43cCB"
+    "Tachyon": "0x4e6FE7f1A372B94B3Fcb6a02C524C2f8eecF796c"
   }
 }
 ```
